@@ -1,0 +1,16 @@
+spring:
+  cloud:
+    function:
+      definition: kinesisConsumerStream
+    stream:
+      kinesis:
+        binder:
+          auto-create-stream: false
+      bindings:
+        kinesisConsumerStream-in-0:
+          destination: user-data-stream
+          group: user-data-stream-group
+          content-type: application/json
+logging:
+  level:
+    com.arajase3.fraudengineservice: DEBUG
